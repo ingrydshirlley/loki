@@ -1,38 +1,279 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600&family=Space+Grotesk:wght@700&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  background-color: plum;
+  width: 100vw;
   display: flex;
   flex-direction: column;
+  height: 100vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.app img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.app .container-texts {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+  gap: 3rem;
+  width: 55%;
+  justify-content: center;
+}
+
+.container-texts .top {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-texts .top h3 {
+  color: #FFF;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Space Grotesk;
+  font-size: 1.5rem;
+}
+
+.container-texts .top h1 {
+  color: #FFF;
+  text-align: center;
+  font-family: Space Grotesk;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.container-texts .bottom {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 2rem;
+  height: auto;
+}
+
+.bottom .image {
+  width: 450px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.bottom .image img {
+  max-width: 170px;
+  height: 245px;
+  border-radius: 10px;
+  box-shadow: 2px 5px 20px rgba(1, 1, 1, 1)
+}
+
+.bottom .box-texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bottom .box-texts span {
+  color: #FFF;
+  font-family: Archivo;
+  font-size: 1.3rem;
+  font-style: normal;
+  line-height: 150%;
+}
+
+.bottom .box-texts .details {
+  display: flex;
+  gap: 10rem;
+  font-size: 1.3rem;
+  margin-top: .7rem;
+  color: #FFF;
+  font-family: Archivo;
+  font-weight: 600;
+}
+
+.time {
+  display: flex;
+  align-items: end;
+  gap: 2px;
+}
+
+.bottom .box-texts .buttons {
+  display: flex;
+  margin-top: 2.5rem;
+  gap: 2rem;
+}
+
+.bottom .box-texts .buttons button {
+  display: flex;
+  padding: 1rem 2rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+  border: 1px solid #0077DC;
+  background: #0077DC;
+  color: #FFF;
+  font-family: Archivo;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all .5s ease-in-out;
+}
+
+.bottom .box-texts .buttons button:hover {
+  border: 1px solid #FFF;
+}
+
+#btn {
+  border: 1px solid #FFF;
+  background: #131318;
+  transition: all .5s ease-in-out;
+}
+
+#btn:hover {
+  border: 1px solid #131318;
+  background: #131318;
+}
+
+.star-icon {
+  color: yellow;
+}
+
+.star-icon2 {
+  color: rgba(178, 156, 18, 0.497);
+}
+
+
+@media screen and (max-width: 1439px) {
+  .app .container-texts {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+    gap: 3rem;
+    width: 70%;
+    justify-content: center;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 1115px) {
+  .app .container-texts {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+    gap: 3rem;
+    width: 85%;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 880px) {
+  .bottom .image img {
+    max-width: 280px;
+    height: 400px;
+  }
+
+  .container-texts .bottom {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .bottom .image {
+    width: 500px;
+    height: 440px;
+    align-self: center;
+  }
+
+  .bottom .box-texts {
+    text-align: center;
+  }
+
+  .bottom .box-texts .details {
+    margin-top: 1.7rem;
+    align-self: center;
+    gap: 3rem;
+  }
+
+  .bottom .box-texts .buttons {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 515px) {
+  .bottom .image img {
+    max-width: 200px;
+    height: 200px;
+  }
+  
+  .app .container-texts {
+    gap: 1rem;
+    width: 85%;
+  }
+
+  .container-texts .bottom {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .bottom .image {
+    width: 210px;
+    height: 210px;
+    align-self: center;
+  }
+
+  .bottom .box-texts {
+    text-align: center;
+  }
+
+  .bottom .box-texts .details {
+    margin-top: 1.7rem;
+    align-self: center;
+    gap: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .bottom .box-texts .buttons {
+    justify-content: center;
+  }
+
+  .bottom .box-texts .buttons button {
+    display: flex;
+    padding: .5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.25rem;
+    border: 1px solid #0077DC;
+    background: #0077DC;
+    color: #FFF;
+    font-family: Archivo;
+    font-size: .9rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all .5s ease-in-out;
+  }
+
+  .bottom .box-texts span {
+    color: #FFF;
+    font-family: Archivo;
+    font-size: 1.1rem;
+    font-style: normal;
+    line-height: 150%;
   }
 }
